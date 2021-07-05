@@ -45,7 +45,7 @@ glance image-create --visibility public --protected False --disk-format qcow2 --
 --file cirros-0.3.5-x86_64-disk.img --name "cirros-1"
 ```
 
-<img src="../images/10.png" />
+<img src="./Images/10.png" />
 
 <a name="1.2"></a>
 ## 1.2.Delete a image
@@ -66,14 +66,14 @@ glance image-delete 753b260e-6cae-40c2-b50d-089c8dc1b29f
 glance image-list
 ```
 
-<img src="../images/11.png" />
+<img src="./Images/11.png" />
 
 \- VD2: List image have visibility private  
 ```
 glance image-list --visibility private
 ```
 
-<img src="../images/12.png" />
+<img src="./Images/12.png" />
 
 <a name="1.4"></a>
 ## 1.4.Show information image
@@ -87,7 +87,7 @@ glance image-show [--human-readable] [--max-column-width <integer>] <IMAGE_ID>
 glance image-show 753b260e-6cae-40c2-b50d-089c8dc1b29f
 ```
 
-<img src="../images/13.png" />
+<img src="./Images/13.png" />
 
 <a name="1.5"></a>
 ## 1.5.Deactivate image
@@ -127,7 +127,7 @@ glance image-update [--architecture <ARCHITECTURE>]
 glance image-update --visibility private 5e2e41bc-8be9-450a-8e6b-4d4c16d303be
 ```
 
-<img src="../images/14.png" />
+<img src="./Images/14.png" />
 
 <a name="1.8"></a>
 ## 1.8.Upload image
@@ -142,7 +142,7 @@ glance image-upload [--file <FILE>] [--size <IMAGE_SIZE>] [--progress] <IMAGE_ID
 glance image-upload --file cirros-0.3.5-x86_64-disk.img  173feebf-da51-4438-9daf-2cf1e1ee254a
 ```
 
-<img src="../images/15.png" />
+<img src="./Images/15.png" />
 
 <a name="2"></a>
 # 2.openstack-client command
@@ -151,7 +151,7 @@ https://docs.openstack.org/developer/python-openstackclient/command-list.html
 https://docs.openstack.org/developer/python-openstackclient/decoder.html#glance-cli  
 \- Mapping giữa glance command và openstack-client command.  
 
-<img src="../images/16.png" />
+<img src="./Images/16.png" />
 
 <a name="2.1"></a>
 ## 2.1.Upload (Create) a image to glance
@@ -160,7 +160,7 @@ openstack image create --container-format bare --disk-format qcow2 \
 --unprotected --public --file cirros-0.3.5-x86_64-disk.img cirros-1
 ```
 
-<img src="../images/17.png" />
+<img src="./Images/17.png" />
 
 <a name="2.2"></a>
 ## 2.2.Delete a image
@@ -187,7 +187,7 @@ openstack image list
 openstack image list
 ```
 
-<img src="../images/18.png" />
+<img src="./Images/18.png" />
 
 <a name="2.4"></a>
 ## 2.4.Show information image
@@ -205,7 +205,7 @@ Image to display (name or ID)
 openstack image show 5e2e41bc-8be9-450a-8e6b-4d4c16d303be
 ```
 
-<img src="../images/19.png" />
+<img src="./Images/19.png" />
 
 <a name="2.5"></a>
 ## 2.5. Set image properties 
@@ -410,7 +410,7 @@ Date: Tue, 09 May 2017 16:15:40 GMT
 
 Tiến hành kiểm tra lại trạng thái của image cirros-test vừa mới khởi tạo, ta sẽ thấy image này ở trạng thái "active", nghĩa là sẵn sàng để sử dụng:
 
-<img src="../images/20.png" />
+<img src="./Images/20.png" />
 
 <a name="3.7"></a>
 ## 3.7.Delete image
@@ -434,27 +434,27 @@ Date: Tue, 09 May 2017 16:18:40 GMT
 Vào link sau và cài đặt:  
 https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=vi  
 
-<img src="../images/21.png" />
+<img src="./Images/21.png" />
 
 <a name="b"></a>
 ## b.Get Token
 \- Request:  
 
-<img src="../images/22.png" />
+<img src="./Images/22.png" />
 
 \- Response:  
 
-<img src="../images/23.png" />
+<img src="./Images/23.png" />
 
 <a name="c"></a>
 ## c.List images
 \- Request:  
 
-<img src="../images/24.png" />
+<img src="./Images/24.png" />
 
 \- Response:
 
-<img src="../images/25.png" />
+<img src="./Images/25.png" />
 
 <a name="d"></a>
 ## d.Các thao tác khác
