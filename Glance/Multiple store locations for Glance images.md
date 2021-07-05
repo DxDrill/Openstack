@@ -38,11 +38,11 @@ service glance-api restart
 glance image-create --name image-test --file cirros-0.3.5-x86_64-disk.img --disk-format qcow2 --container-format bare
 ```
 
-<img src="../images/26.png" />
+<img src="./Images/26.png" />
 
 \- Theo lý thuyết, images sẽ lưu ở trong thư mục `/home/wind/image-repo1`.Ta kiểm tra:  
 
-<img src="../images/27.png" />
+<img src="./Images/27.png" />
 
 Quả đúng như vậy!
 
