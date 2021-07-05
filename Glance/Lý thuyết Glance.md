@@ -32,7 +32,7 @@
 - database: lưu trữ metadata của image.
 - storage repository: tích hợp với nhiều thanh phần của OpenStack như file systems, Amazon S3 và HTTP cho image storages.
 
-<img src="./images/1.png" />
+<img src="./Images/1.png" />
 
 Glance chấp nhận API request cho image từ end-users hoặc Nova components và có thể stores nó trong object storage service,swift hoặc storage repository khác.  
 \- Image server hỗ trợ các back-end stores:  
@@ -57,9 +57,9 @@ Stores images sử dụng MongoDB.
 
 <a name="3"></a>
 # 3.Glance Architecture
-<img src="./images/2.png" />
+<img src="./Images/2.png" />
 
-<img src="./images/3.png" />
+<img src="./Images/3.png" />
 
 \- Glance có client-service architecture và cung cấp Rest API để request đến server được thực hiện. Request từ client được chấp nhận thông qua Rest API và chờ Keystone authentication. Glance Domain controller quản lý tất cả các hoạt động internal, là phân chia đến layers, mỗi layer thực hiện nhiệm vụ của nó.  
 Glance store là layer giao tiếp giữa glance và storage backends bên ngoài hoặc local file system và cung cấp uniform interface để truy cập. Glance sử dụng SQL central Database làm điểm truy cập cho mỗi components khác trong hệ thống.  
@@ -81,14 +81,14 @@ Glance store là layer giao tiếp giữa glance và storage backends bên ngoà
 ## 4.1.Disk Formats
 Disk Formats của virtual machine image là format của underlying disk image. Disk formats được hỗ trợ bởi OpenStack glance.  
 
-<img src="./images/4.png" />
+<img src="./Images/4.png" />
 
 <a name="4.2"></a>
 ## 4.2.Container Formats
 OpenStack glance hỗ trợ container format, mô tả file formats và chứa các thông tin metadata về actual virtual machine.  
 Container formats được hỗ trợ trong OpenStack glance :  
 
-<img src="./images/5.png" />
+<img src="./Images/5.png" />
 
 >Note :  
 Container Formats không được sử dụng hiện hành bởi Glance hoặc OpenStack components khác. Vì thế ‘bare’ là được quy định như container format khi chúng ta upload image trong glance, bare nghĩa là without container.  
@@ -98,7 +98,7 @@ Container Formats không được sử dụng hiện hành bởi Glance hoặc O
 \- Glance statue flow cho biết status của image khi uploading.Khi chúng ta create image, first step là queuing, image được queued trong một thời gian ngắn, được bảo vệ và sẵn sàng upload. Sau khi queuing image đi đến status Saving, nghĩa là not fully uploaded.Image là full uploaded khi status là Active. Khi uploading fails, nó sẽ chuyển sang killed hoặc deleted state. Chúng ta có thể deactivate và reactivate các fully uploaded images bằng cách sử dụng command.  
 \- Diagram bên dưới show status flow của glance:  
 
-<img src="./images/6.png" />
+<img src="./Images/6.png" />
 
 \- Các status của image:  
 - queued  
@@ -134,11 +134,11 @@ Các file cấu hình glance nằm trong thư mục `/etc/glance`. Sau đây là
 \- Khi chúng ta launch an instance, chúng ta cần chỉ định flavor, which represents virtual resource. Flavors define số lượng virtual CPUs, dung lượng RAM cho virtual machine, and the size of its ephemeral disks. Openstack cung cấp một bộ các flavors được định nghĩa trước, chúng ta có thể create và editor flavors theo ý mình.  
 \- diagram show bên dưới chỉ ra system state trước khi launching an instance. Image store chỉ ra số lượng images đã được định nghĩa trước, compute node chứa vcpu sẵn có, memory và local disk resource và cinder-volume chứa số lượng volumes được định nghĩa trước.  
 
-<img src="./images/7.png" />
+<img src="./Images/7.png" />
 
 \- Trước khi launching instance, ta chọn image, flavor và bất kỳ optional  attributes. Chọn flavor cung cấp root volume, labelled như vda và ephemeral storage phụ thêm là labelled như vdb và cinder-volume được mapped đến virtual-disk thứ 3 và gọi nó là vdc.
 
-<img src="./images/8.png" />
+<img src="./Images/8.png" />
 
 \- Trong hình này, image được copy đến local disk từ image store. vda là disk đầu tiền mà instances truy cập, instances bắt đầu nhanh nếu size của image là nhỏ cũng như data là nhỏ để copy qua network. vdb là ephemeral disk rỗng được tạo với instance, nó sẽ bị deletedkhi instance ngừng hoạt động.    
 \- vdc kết nối tới cinder-volume sử dụng iSCSI.Sau kho compute node chuẩn bị vCPU và memory resources, instance boots up từ root volume vda.instance runs và thay đổi data trên disks. Nếu volume store được đặt trên network riêng rẽ, my_block_storage_ip option chỉ định trong storage node configuration file chi ra lưu lượng image đến compute node.  
@@ -157,7 +157,7 @@ Tham khảo tại: https://specs.openstack.org/openstack/nova-specs/specs/mitaka
 
 <a name="8.3"></a>
 ## 8.3.Glance Image Signature Verification
-<img src="./images/9.png" />
+<img src="./Images/9.png" />
 
 \- Hình trên là quá trình “Glance Image Signature Verification” trong 2 use case : Quá trình User upload image (bước 1-10) và Nova request image từ Glance (bước 11-17)  
 \- **Bước 1** : User muốn upload Image, user create Image  
